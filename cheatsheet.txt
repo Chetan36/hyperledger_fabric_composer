@@ -1,0 +1,37 @@
+SERVER IP -
+http://164.52.196.215:8080/login
+root / H3pf@vcnn
+
+
+INSTALL HYPERLEDGER FABRIC LINK -
+
+https://hyperledger.github.io/composer/latest/installing/installing-index.html
+
+
+curl -O https://hyperledger.github.io/composer/latest/prereqs-ubuntu.sh
+
+chmod u+x prereqs-ubuntu.sh
+
+./prereqs-ubuntu.sh
+
+npm install -g composer-cli@0.20 --unsafe-perm
+npm install -g composer-rest-server@0.20 --unsafe-perm
+npm install -g generator-hyperledger-composer@0.20 --unsafe-perm
+npm install -g yo --unsafe-perm
+npm install -g composer-playground@0.20 --unsafe-perm
+
+mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers
+
+curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
+tar -xvf fabric-dev-servers.tar.gz
+
+cd ~/fabric-dev-servers
+export FABRIC_VERSION=hlfv12
+./downloadFabric.sh
+
+cd ~/fabric-dev-servers
+export FABRIC_VERSION=hlfv12
+./startFabric.sh
+./createPeerAdminCard.sh
+
+composer-playground
