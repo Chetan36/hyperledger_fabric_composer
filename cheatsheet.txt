@@ -35,3 +35,6 @@ export FABRIC_VERSION=hlfv12
 ./createPeerAdminCard.sh
 
 composer-playground
+
+composer network install --archiveFile basic-sample-network3.bna --card WebAppAdmin@hlfv1
+composer network start --networkName basic-sample-network --networkVersion 1.0.0 --card PeerAdmin@hlfv1 --networkAdmin PeerAdmin --networkAdminEnrollSecret BJY27pEnl16d
